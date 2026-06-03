@@ -143,9 +143,7 @@ function App() {
   }, [authenticated, loadNotes]);
 
   function handleLogin() {
-    keycloak
-      .login({ scope: "openid notes:read notes:write notes:delete" })
-      .then(() => handleAuthenticated());
+    keycloak.login().then(() => handleAuthenticated());
   }
 
   function handleLogout() {
